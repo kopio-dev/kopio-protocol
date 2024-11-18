@@ -1,0 +1,58 @@
+# yarn
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+
+# temp outputs
+.coverage_artifacts/
+.coverage_cache/
+.coverage_contracts/
+dist/
+temp/
+out/**/deploy/1337
+out/**/deploy/31337
+out/**/deploy/41337
+out/**/deploy/**/runs
+src/scripts/locals/
+src/test/locals/
+coverage/
+artifacts/
+cache/
+build/
+broadcast/
+node_modules/
+deployments/hardhat
+deployments/localhost
+deployments/anvil
+src-ts/types/typechain
+src-ts/types/contracts
+_bin
+bin
+# secrets
+*interact.ethers
+*.env
+*.secrets
+*.npmrc
+
+soljson-*
+# misc
+*.logs
+*.tsbuildinfo
+coverage.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+**/.DS_Store
+
+soljson-*.*
+
+*ganache.js
+packages/contracts/dist
+packages/contracts/src/types/**/*
+# OpenZeppelin
+.openzeppelin/dev-*.json
+.openzeppelin/unknown-*.json
+.openzeppelin/.session
+anvil-config.json
+docs/test-report
+out

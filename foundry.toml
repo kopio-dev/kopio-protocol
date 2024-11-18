@@ -1,0 +1,138 @@
+[profile.default]
+# -- 
+src = 'src'
+script = 'src/scripts'
+test = 'src/test'
+libs = ['lib', 'src/contracts/core']
+# -- 
+out = 'build/foundry'
+broadcast = 'out/foundry/broadcast'
+cache_path = 'build/foundry/cache'
+# -- 
+fs_permissions = [{ access = "read-write", path = "./" }]
+ffi = true
+# -- 
+evm_version = 'cancun'
+via_ir = true
+optimizer = true
+optimizer_runs = 75000
+no_rpc_rate_limit = true
+
+# -- 
+remappings = [
+    'kopio/=lib/kopio-lib/src/',
+    'facets/=src/contracts/facets/',
+    'interfaces/=src/contracts/interfaces/',
+    'vendor/=src/contracts/vendor/',
+    'diamond/=src/contracts/diamond/',
+    "periphery/=src/contracts/periphery/",
+    'scripts/=src/scripts/',
+    'test/=src/test/',
+    "mocks/=src/contracts/mocks/",
+]
+# -- 
+[rpc_endpoints]
+arbitrum = "${RPC_ARBITRUM_ALCHEMY}"
+arbitrumSepolia = "${RPC_ARBITRUM_SEPOLIA_ALCHEMY}"
+arbitrumGoerli = "${RPC_ARBITRUM_GOERLI_ALCHEMY}"
+mainnet = "${RPC_MAINNET_ALCHEMY}"
+goerli = "${RPC_GOERLI_ALCHEMY}"
+localhost = "${RPC_LOCAL}"
+sepolia = "${RPC_SEPOLIA_ALCHEMY}"
+arbitrumNova = "${RPC_ARBITRUM_NOVA}"
+optimism = "${RPC_OPTIMISM_ALCHEMY}"
+optimismGoerli = "${RPC_OPTIMISM_GOERLI_ALCHEMY}"
+bsc = "${RPC_BSC}"
+polygon = "${RPC_POLYGON_ALCHEMY}"
+polygonMumbai = "${RPC_POLYGON_MUMBAI_ALCHEMY}"
+polygonZkEvm = "${RPC_POLYGON_ZKEVM_ALCHEMY}"
+polygonZkEvmTestnet = "${RPC_POLYGON_ZKEVM_TESTNET_ALCHEMY}"
+moonbeam = "${RPC_MOONBEAM}"
+moonriver = "${RPC_MOONRIVER}"
+gnosis = "${RPC_GNOSIS}"
+avax = "${RPC_AVAX}"
+fantom = "${RPC_FANTOM}"
+celo = "${RPC_CELO}"
+harmony = "${RPC_HARMONY}"
+metis = "${RPC_METIS}"
+aurora = "${RPC_AURORA}"
+zkSync = "${RPC_ZKSYNC}"
+zkSyncTestnet = "${RPC_ZKSYNC_TESTNET}"
+
+[etherscan]
+arbitrum = { key = "${ETHERSCAN_API_KEY_ARBITRUM}", chain = 42161, url = "https://api.arbiscan.io/api" }
+arbitrumNova = { key = "${ETHERSCAN_API_KEY_ARBITRUM_NOVA}", chain = 42170, url = "https://api-nova.arbiscan.io/api" }
+arbitrumGoerli = { key = "${ETHERSCAN_API_KEY_ARBITRUM_GOERLI}", chain = 421613, url = "https://api-goerli.arbiscan.io/api" }
+arbitrumSepolia = { key = "${ETHERSCAN_API_KEY_ARBITRUM_SEPOLIA}", chain = 421614, url = "https://api-sepolia.arbiscan.io/api" }
+mainnet = { key = "${ETHERSCAN_API_KEY_MAINNET}" }
+goerli = { key = "${ETHERSCAN_API_KEY_GOERLI}", url = "https://api-goerli.etherscan.io/api" }
+sepolia = { key = "${ETHERSCAN_API_KEY_SEPOLIA}", chain = 11155111, url = "https://api-sepolia.etherscan.io/api" }
+optimism = { key = "${ETHERSCAN_API_KEY_OPTIMISM}", chain = 10, url = "https://api-optimistic.etherscan.io/api" }
+optimismGoerli = { key = "${ETHERSCAN_API_KEY_OPTIMISM_GOERLI}", chain = 420, url = "http://api-goerli-optimism.etherscan.io/api" }
+polygon = { key = "${ETHERSCAN_API_KEY_POLYGON}", chain = 137, url = "https://api.polygonscan.com/api" }
+polygonMumbai = { key = "${ETHERSCAN_API_KEY_POLYGON_MUMBAI}", chain = 80001, url = "https://api-testnet.polygonscan.com/api" }
+polygonZkEvm = { key = "${ETHERSCAN_API_KEY_POLYGON_ZKEVM}", chain = 1101, url = "https://api-zkevm.polygonscan.com/api" }
+polygonZkEvmTestnet = { key = "${ETHERSCAN_API_KEY_POLYGON_ZKEVM_TESTNET}", chain = 1442, url = "https://api-testnet-zkevm.polygonscan.com/api" }
+bsc = { key = "${ETHERSCAN_API_KEY_BSC}", chain = 56, url = "https://api.bscscan.com/api" }
+moonbeam = { key = "${ETHERSCAN_API_KEY_MOONBEAM}", chain = 1284, url = "https://api-moonbeam.moonscan.io/api" }
+moonriver = { key = "${ETHERSCAN_API_KEY_MOONRIVER}", chain = 1285, url = "https://api-moonriver.moonscan.io/api" }
+gnosis = { key = "${ETHERSCAN_API_KEY_GNOSIS}", chain = 100, url = "https://api.gnosisscan.io/api" }
+avax = { key = "${ETHERSCAN_API_KEY_AVAX}", chain = 43114, url = "https://api.snowtrace.io/api" }
+fantom = { key = "${ETHERSCAN_API_KEY_FANTOM}", chain = 250, url = "https://api.ftmscan.com/api" }
+celo = { key = "${ETHERSCAN_API_KEY_CELO}", chain = 42220, url = "https://api.celoscan.io/api" }
+metis = { key = "any", chain = 1088, url = "https://andromeda-explorer.metis.io/api" }
+aurora = { key = "any", chain = 421613, url = "https://explorer.mainnet.aurora.dev/api" }
+zkSync = { key = "any", chain = 324, url = "https://zksync2-mainnet-explorer.zksync.io/contract_verification" }
+zkSyncTestnet = { key = "any", chain = 280, url = "https://zksync2-testnet-explorer.zksync.dev/contract_verification" }
+
+[fmt]
+multiline_func_header = 'attributes_first'
+single_line_block_style = 'single'
+line_length = 120
+
+[labels]
+"0x912CE59144191C1204E64559FE8253a0e49E6548" = "ARB"
+"0xaf88d065e77c8cC2239327C5EDb3A432268e5831" = "USDC"
+"0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8" = "USDCe"
+"0x2f2a2543B76A4166549F7aaB2e75Bef0aefC5B0f" = "WBTC"
+"0x82aF49447D8a07e3bd95BD0d56f35241523fBab1" = "WETH"
+"0x5979D7b546E38E414F7E9822514be443A4800529" = "wsTETH"
+"0x35751007a407ca6FEFfE80b3cB397736D2cf4dbe" = "weETH"
+"0x2416092f143378750bb29b79eD961ab195CcEea5" = "ezETH"
+"0xDA10009cBd5D07dd0CeCc66161FC93D7c9000da1" = "DAI"
+"0xFd086bC7CD5C481DCC9C85ebE478A1C0b69FCbb9" = "USDT"
+"0x10000000001b2cc3aeEfDF01815B5D5FcBaf05Fc" = "ONE"
+"0xB38e8c17e38363aF6EbdCb3dAE12e0243582891D" = "BINANCE"
+"0xff1a0f4744e8582DF1aE09D5611b887B6a12925C" = "PYTHEP"
+"0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45" = "UniswapRouterV3"
+"0x61fFE014bA17989E743c5F6cB21bF9697530B21e" = "UniswapQuoterV2"
+"0x000000000000dcC1394A66cD4f84Fb38932a0fAB" = "KopioCore"
+"0x000000000031188af86eb08b1C25a893B75a9a3B" = "KopioMulticall"
+"0x00000000000029398fcE86f09FF8453c8D0Cd60D" = "ProxyFactory"
+"0x000000000016777A0173d5d1717897d04485cC50" = "Vault"
+"0xddDdDddDDd14aC7aB83F957b804e6b714b75179E" = "PrevDataV3"
+"0xdddDDdddDDb338eB3c0283AD729692Cd39e8e336" = "KopioDataV3"
+"0x77777777775c600736D65AD78623c0D563635e02" = "KopioMarketStatus"
+"0xfeEFeEfeED0bd9Df8d23dC0242FEF943c574468f" = "PythRelayer"
+"0xaaaaaAaAaAa186774266Ea9b3FC0B588B3232795" = "KopioMigrator"
+"0x333333333331Bb94E66b5aB3acfa0D30936C028A" = "KopioCLV3"
+"0x6788C6aEd8CB32E166484796C533bF21abfe0354" = "kETH"
+"0x3074Bf9512F2d945f2C54A3A5893A1Fda895321A" = "kBTC"
+"0xe0492d73E8E950616Da6C766E952204aB39455e9" = "kSOL"
+"0x771C83402cE9Cd7E36e4AC7F2B0eED1Ad595814d" = "kEUR"
+"0x690F31dca265Ba9Ae926228989AeeC6a822d5904" = "kJPY"
+"0x41e18889f1e59227fcb4fbbc2A1dAe20eFA1e45F" = "kGBP"
+"0xa47A706F0f07715760f96C4c2E322D25cDCb0A06" = "kXAU"
+"0xA40c5780044fa125160770Cd29Bdbb631eA8ed0f" = "kXAG"
+"0x9DA7799E7896c542C13aD01Db5A9DC3A95Df193A" = "kDOGE"
+"0x2aE27010F340062ceaAB3591B62351737f9E77B4" = "skETH"
+"0x8616281a8F9cA1860fbedf096581Db08B02A0297" = "skBTC"
+"0x34b322DcA665754D5B1B07871aF8Ad2AD021d44D" = "skSOL"
+"0x2F9727e769f9fB79D427Ca84dB35C366fA49600c" = "skEUR"
+"0x03eeA39526534210e2471C54398E5Be8473C2c28" = "skJPY"
+"0x6bA32Fd18d550f8E56ad93887A7f208A7eFB03C3" = "skGBP"
+"0xd53FD8d8b0bF7116aeA20d8465c9A013002C5b6F" = "skXAU"
+"0x77606e3670273A489234B11571EfAC4163aC93cD" = "skXAG"
+"0x100210d2d6058B9Aee92306aAe144944A756ff26" = "skDOGE"
+"0xd884451eC95721BcF05948C37a9F939059c87E6a" = "KopioSafe"
+"0x200789Abdc6D679B26c6AfFCEA533DB1a4d022c2" = "DefaultDeployer"

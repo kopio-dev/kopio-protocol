@@ -1,0 +1,60 @@
+name: hardhat-and-foundry
+on: [push]
+jobs:
+  foundry:
+    name: foundry
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: oven-sh/setup-bun@v1
+        env:
+          BUN_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        with:
+          registry-url: https://registry.npmjs.org
+          scope: '@kopio'
+
+      - run: git config --global url."https://${{ secrets.GH_TOKEN }}@github.com/".insteadOf ssh://git@github.com/
+      - run: cp .env.example .env
+
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: nightly
+
+      - run: bun install --yarn
+
+      - name: Run Foundry Tests
+        run: forge test --no-rpc-rate-limit --memory-limit 234217728
+        env:
+          ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
+          RPC_ARBITRUM_ALCHEMY: https://arb-mainnet.g.alchemy.com/v2/${{ secrets.ALCHEMY_API_KEY }}
+          MNEMONIC_KOPIO: ${{ secrets.MNEMONIC_KOPIO }}
+
+  hardhat:
+    name: hardhat
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: oven-sh/setup-bun@v1
+        env:
+          BUN_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        with:
+          registry-url: https://registry.npmjs.org
+          scope: '@kopio'
+
+      - run: git config --global url."https://${{ secrets.GH_TOKEN }}@github.com/".insteadOf ssh://git@github.com/
+      - run: cp .env.example .env
+
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: nightly
+
+      - run: forge install
+
+      - run: bun install --yarn
+
+      - run: bun run hh:test:ci
+        env:
+          ALCHEMY_API_KEY: ${{ secrets.ALCHEMY_API_KEY }}
+          MNEMONIC_KOPIO: ${{ secrets.MNEMONIC_KOPIO }}

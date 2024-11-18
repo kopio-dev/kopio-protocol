@@ -1,0 +1,33 @@
+{
+  "00_configId": "test-base",
+  "01_create2Deployer": "0x4e59b44847b379578588920ca78fbf26c0b4956c",
+  "02_deploymentFactory": "0x0000000000000000000000000000000000000000",
+  "03_common": {
+    "00_admin": "0x0000000000000000000000000000000000000000",
+    "01_council": "0x0000000000000000000000000000000000000000",
+    "02_treasury": "0xd884451eC95721BcF05948C37a9F939059c87E6a",
+    "03_maxPriceDeviationPct": 5e2,
+    "04_oracleDecimals": 8,
+    "05_sequencerGracePeriodTime": 3600,
+    "06_sequencerUptimeFeed": "0x0000000000000000000000000000000000000000",
+    "07_pythEndpoint": "0x0000000000000000000000000000000000000000",
+    "08_marketStatusProvider": "0x0000000000000000000000000000000000000000",
+    "09_kclv3": "0x0000000000000000000000000000000000000000"
+  },
+  "04_scdp": {
+    "00_minCollateralRatio": 250e2,
+    "01_liquidationThreshold": 150e2,
+    "02_coverThreshold": 160e2,
+    "03_coverIncentive": 1.01e4
+  },
+  "05_icdp": {
+    "00_liquidationThreshold": 140e2,
+    "01_minCollateralRatio": 150e2,
+    "02_minDebtValue": 10e8
+  },
+  "06_periphery": {
+    "00_V3SwapRouter02": "0x0000000000000000000000000000000000000000",
+    "01_UniswapQuoterV2": "0x0000000000000000000000000000000000000000"
+  },
+  "07_pythRelayer": "0x0000000000000000000000000000000000000000"
+}

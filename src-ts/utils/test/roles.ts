@@ -1,0 +1,8 @@
+import { pad, toHex } from 'viem'
+export const Role = {
+  DEFAULT_ADMIN: pad(toHex(0), { size: 32 }),
+  ADMIN: '0xfbe961a833e853ed50a0aed73ee09411d9df4c37861442cde10f08a8ca88a2ab',
+  OPERATOR: '0x5d7d0337ab7c430f6955cdf0d4ab3c936053c9b0b1fb20ca3e98d2137d993d6d',
+  MANAGER: '0x7c6cf2e8411c745b3e634d27b3f960faa6d22031873cce603a8e28a029c2b0e1',
+  SAFETY_COUNCIL: '0x72165107639b94d2137aecf74a13a0b5289147f88d56f6854295142e06b913ee',
+}

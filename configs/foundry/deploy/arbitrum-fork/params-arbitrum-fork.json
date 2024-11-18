@@ -1,0 +1,33 @@
+{
+  "00_configId": "arbitrum-fork",
+  "01_create2Deployer": "0x0000000000FFe8B47B3e2130213B802212439497",
+  "02_deploymentFactory": "0x0000000000000000000000000000000000000000",
+  "03_common": {
+    "00_admin": "0xd884451eC95721BcF05948C37a9F939059c87E6a",
+    "01_council": "0xd884451eC95721BcF05948C37a9F939059c87E6a",
+    "02_treasury": "0xd884451eC95721BcF05948C37a9F939059c87E6a",
+    "03_maxPriceDeviationPct": 5e2,
+    "04_oracleDecimals": 8,
+    "05_sequencerGracePeriodTime": 3600,
+    "06_sequencerUptimeFeed": "0xFdB631F5EE196F0ed6FAa767959853A9F217697D",
+    "07_pythEndpoint": "0xfeEFeEfeED0bd9Df8d23dC0242FEF943c574468f",
+    "08_marketStatusProvider": "0x77777777775c600736d65ad78623c0d563635e02",
+    "09_kclv3": "0x333333333331bb94e66b5ab3acfa0d30936c028a"
+  },
+  "04_scdp": {
+    "00_minCollateralRatio": 250e2,
+    "01_liquidationThreshold": 150e2,
+    "02_coverThreshold": 160e2,
+    "03_coverIncentive": 1.01e4
+  },
+  "05_icdp": {
+    "00_liquidationThreshold": 140e2,
+    "01_minCollateralRatio": 150e2,
+    "02_minDebtValue": 10e8
+  },
+  "06_periphery": {
+    "00_V3SwapRouter02": "0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45",
+    "01_UniswapQuoterV2": "0x61fFE014bA17989E743c5F6cB21bF9697530B21e"
+  },
+  "07_pythRelayer": "0xfeEFeEfeED0bd9Df8d23dC0242FEF943c574468f"
+}

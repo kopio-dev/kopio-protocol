@@ -1,0 +1,16 @@
+.yarn/
+build/**/*
+dist/**/*
+artifacts/**/*
+cache/**/*
+bin/**/*
+out
+lib/**/*
+node_modules/
+docs/
+src/contracts/vendor/
+src/contracts/test/
+src/contracts/periphery/**
+src/contracts/core/test/
+src/test/
+src

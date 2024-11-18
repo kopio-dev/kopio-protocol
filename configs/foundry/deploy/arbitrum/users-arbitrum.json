@@ -1,0 +1,31 @@
+{
+  "00_configId": "arbitrum",
+  "01_mnemonicEnv": "MNEMONIC_DEPLOY",
+  "02_users": [
+    {
+      "00_mnemonicIdx": 0,
+      "01_addr": "0x0000000000000000000000000000000000000000"
+    }
+  ],
+  "03_external_balances": [],
+  "04_scdp": [
+    {
+      "00_user": 0,
+      "01_oneDeposits": 10e18,
+      "02_vaultAsset": "USDC.e",
+      "03_assetsFrom": "0x0000000000000000000000000000000000000001"
+    },
+    {
+      "00_user": 0,
+      "01_oneDeposits": 10e18,
+      "02_vaultAsset": "USDC",
+      "03_assetsFrom": "0x0000000000000000000000000000000000000001"
+    }
+  ],
+  "05_icdp": [],
+  "06_nfts": {
+    "00_useMocks": false,
+    "01_nftsFrom": "0x0000000000000000000000000000000000000000",
+    "02_userCount": 0
+  }
+}

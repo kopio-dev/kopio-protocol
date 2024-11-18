@@ -1,0 +1,77 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "esnext",
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "noErrorTruncation": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipDefaultLibCheck": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "noImplicitAny": true,
+    "noEmit": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/types": [
+        "src-ts/types"
+      ],
+      "@/types/*": [
+        "src-ts/types/*"
+      ],
+      "@config/*": [
+        "configs/*"
+      ],
+      "@utils": [
+        "src-ts/utils"
+      ],
+      "@utils/*": [
+        "src-ts/utils/*"
+      ],
+      "@tasks": [
+        "src-ts/tasks"
+      ],
+      "@test/*": [
+        "src-ts/test/*"
+      ],
+      "@scripts/*": [
+        "src-ts/scripts/*"
+      ],
+      "@test-utils": [
+        "src-ts/utils/test"
+      ]
+    }
+  },
+  "exclude": [
+    "temp",
+    "build",
+    "docs",
+    "**/node_modules/**",
+    "lib/kopio-lib/lib",
+    "cache",
+    "out",
+    "artifacts",
+    "broadcast"
+  ],
+  "include": [
+    "hardhat.config.ts",
+    "lib/kopio-lib/utils",
+    "configs",
+    "utils",
+    "src-ts"
+  ],
+  "references": [
+    {
+      "path": "lib/kopio-lib"
+    }
+  ],
+  "ts-node": {
+    "files": true,
+    "transpileOnly": true,
+    "swc": true
+  }
+}
